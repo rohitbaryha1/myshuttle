@@ -14,7 +14,7 @@ public class Employee
 		this.id = id;
 		this.username = username;
 		this.password = password;
-		// Comment to test CI
+		// Comment to test CI in new project
 	}
 	
 	public int getID() { return id; }
