@@ -3,16 +3,27 @@
 <html>
 
 <head>
-  <title>Employee Fares - <c:out value="${employee.username}"></c:out></title>
+    <title>Employee Fares - <c:out value="${employee.username}"></c:out></title>
+    <link rel="shortcut icon" type="image/ico" href="favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="App/Themes/Lumen/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="App/Modules/Core/Css/core.css">
+    <link rel="stylesheet" type="text/css" href="App/Modules/Core/Css/list.css">
 </head>
-
 <body>
-
-    <h1>Employee Fares for <c:out value="${employee.username}"></c:out></h1>
-    
-    <table>
-        <tbody>
-            <tr>
+    <div class="container-fluid full-width-container">
+        <section class="container main-content">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <div class="row">
+                        <img src="Content/Images/logologin.png">
+                    </div>
+                    <h2>Employee Fares for <c:out value="${employee.username}"></c:out></h2>
+                </div>
+                <div class="panel-body">
+                    <div class="table-responsive">
+                        <table class="table table-striped table-condensed">
+                            <tbody>
+    <tr class="info">
                 <th>ID</th>
                 <th>Start</th>
                 <th>Pickup</th>
@@ -24,7 +35,7 @@
                 <th>Drvr Rtg</th>
             </tr>
         <c:forEach items="${employeeList}" var="fare">
-            <tr>
+            <tr class="table-row">
                 <td>${fare.id}</td>
                 <td><fmt:formatDate value="${fare.start}" pattern="HH:mm:ss yyyy-MM-dd" /></td>
                 <td>${fare.pickup}</td>
@@ -36,9 +47,15 @@
                 <td>${fare.driverRating}</td>
             </tr>
         </c:forEach>
-        </tbody>
-    </table>
-
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="panel-footer">
+                    <h5>Internal Use Only</h5>
+                </div>
+             </div>
+        </section>
+    </div>
 </body>
-
 </html>
