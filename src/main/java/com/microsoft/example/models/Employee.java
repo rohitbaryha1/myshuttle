@@ -14,7 +14,6 @@ public class Employee
 		this.id = id;
 		this.username = username;
 		this.password = password;
-		// Updated comment
 	}
 	
 	public int getID() { return id; }
