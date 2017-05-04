@@ -14,7 +14,7 @@
                     <div class="row">
                         <img src="Content/Images/logologin.png">
                     </div>
-                    <h2>A Dashboard</h2>
+                    <h2>MY Dashboard</h2>
                 </div>
                 <div class="panel-body">
                     <a href="home.jsp">Access Your Fare History</a>
