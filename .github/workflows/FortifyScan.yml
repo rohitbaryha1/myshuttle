@@ -1,4 +1,4 @@
-name: Fortify ScanCentral SAST Scan
+name: Fortify ScanCentral Scan
 on:
   push:
     branches: [master]
