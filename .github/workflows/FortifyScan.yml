@@ -1,6 +1,5 @@
 name: Fortify ScanCentral SAST Scan
 on:
-  workflow_dispatch:
   push:
     branches: [master]
   pull_request:
@@ -12,6 +11,8 @@ jobs:
     # Use the appropriate runner for building your source code
     runs-on: ubuntu-latest                                     
 
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
       # Check out source code
       - name: Check Out Source Code
         uses: actions/checkout@v2
