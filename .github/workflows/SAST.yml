@@ -40,7 +40,7 @@ jobs:
           client-auth-token: CHANGEME321!
 
       - name: Perform SAST
-        run: scancentral -sscurl "${{ env.URL }}" -ssctoken ${{ env.TOKEN }} start "${{ env.BUILD_OPTS }}" -upload -application "${{ env.APPLICATION }}" -version ${{ env.VERSION }} -uptoken ${{ env.TOKEN }}
+        run: scancentral -sscurl "${{ env.URL }}" -ssctoken ${{ env.TOKEN }} start ${{ env.BUILD_OPTS }} -upload -application "${{ env.APPLICATION }}" -version ${{ env.VERSION }} -uptoken ${{ env.TOKEN }}
         env:
           URL: "http://fortify201.myhome.com:8080/ssc"
           TOKEN: bda951b8-9425-414d-a84f-35931a7e86cc
