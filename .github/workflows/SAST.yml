@@ -65,7 +65,7 @@ jobs:
         run: |
           echo "Converting FPR to SARIF format"
           cd ${{ github.workspace }}
-          %USERPROFILE%\.dotnet\tools\sarif convert myshuttle.fpr --tool FortifyFpr --output myshuttle.sarif --pretty-print --force
+          C:\Users\Administrator\.dotnet\tools\sarif convert myshuttle.fpr --tool FortifyFpr --output myshuttle.sarif --pretty-print --force
           echo "Conversion Done."
       # Uploads results.sarif to GitHub repository using the upload-sarif action
       - name: Upload SARIF file
