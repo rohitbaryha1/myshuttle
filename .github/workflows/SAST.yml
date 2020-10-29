@@ -55,7 +55,7 @@ jobs:
            path: ${{ github.workspace }}/myshuttle.fpr
            
       - name: Convert FPR to SARIF
-        uses: fortify/gha-fpr-to-sarif
+        uses: fortify/gha-fpr-to-sarif@v0
         with:
           input: ${{ github.workspace }}/myshuttle.fpr
           Output: ${{ github.workspace }}
