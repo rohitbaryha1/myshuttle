@@ -54,12 +54,6 @@ jobs:
            name: SASTScanfpr
            path: ${{ github.workspace }}/myshuttle.fpr
            
-#      - name: Convert FPR to SARIF
-#        uses: fortify/gha-fpr-to-sarif@v0
-#        with:
-#          input: ${{ github.workspace }}/myshuttle.fpr
-#          Output: ${{ github.workspace }}
-           
       # Runs a set of commands using the runners shell
       - name: Converting FPR to SARIF
         run: |
