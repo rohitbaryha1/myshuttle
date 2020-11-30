@@ -34,7 +34,7 @@ jobs:
           java-version: 1.8
           
       - name: Setup Scan Central
-        uses: fortify/gha-setup-scancentral-client@v1.1.0
+        uses: fortify/gha-setup-scancentral-client@v1.1.1
         with:
           version: 20.1.0
           client-auth-token: CHANGEME321!
