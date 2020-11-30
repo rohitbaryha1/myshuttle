@@ -3,7 +3,7 @@
 <html>
 
 <head>
-    <title>Employee Fares - <c:out value="${employee.username}"></c:out></title>
+    <title>Internal Employee Fares - <c:out value="${employee.username}"></c:out></title>
     <link rel="shortcut icon" type="image/ico" href="favicon.ico" />
     <link rel="stylesheet" type="text/css" href="App/Themes/Lumen/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="App/Modules/Core/Css/core.css">
