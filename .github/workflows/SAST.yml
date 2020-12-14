@@ -47,23 +47,19 @@ jobs:
           APPLICATION: "My Shuttle - GITHUB"
           VERSION: "1.0"
           BUILD_OPTS: "-bt mvn"
-       
-      - name: Save Scan Report
-        uses: actions/upload-artifact@v2                
+      
+      - name: Generate SARIF
+        uses: docker://fortifydocker/fortify-vulnerability-exporter:latest
         with:
-           name: SASTScanfpr
-           path: ${{ github.workspace }}/myshuttle.fpr
-           
-      # Runs a set of commands using the runners shell
-      - name: Converting FPR to SARIF
-        run: |
-          echo "Converting FPR to SARIF format"
-          cd ${{ github.workspace }}
-          C:\Users\Administrator\.dotnet\tools\sarif convert myshuttle.fpr --tool FortifyFpr --output myshuttle.sarif --pretty-print --force
-          echo "Conversion Done."
+          export_config: /config/SSCToGitHub.yml
+          ssc_baseUrl: "http://fortify201.myhome.com:8080/ssc"
+          ssc_authToken: bda951b8-9425-414d-a84f-35931a7e86cc
+          ssc_version_name: My Shuttle - GITHUB:1.0
+          # Or use ssc_version_id: 1234
+
       # Uploads results.sarif to GitHub repository using the upload-sarif action
       - name: Upload SARIF file
         uses: github/codeql-action/upload-sarif@v1
         with:
           # Path to SARIF file relative to the root of the repository
-         sarif_file: myshuttle.sarif
+         sarif_file: ./gh-fortify-sast.sarif
