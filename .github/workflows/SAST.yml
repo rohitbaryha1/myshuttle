@@ -52,7 +52,7 @@ jobs:
       - name: Converting FPR to SARIF
         run: |
           echo "Converting FPR to SARIF format"
-          java -DpluginDir=C:\Users\Administrator\Downloads\FortifyVulnerabilityExporter-1.0\plugins -jar C:\Users\Administrator\Downloads\FortifyVulnerabilityExporter-1.0\FortifyVulnerabilityExporter-1.0-beta-20201211-104105.jar --export.config=C:\Users\Administrator\Downloads\FortifyVulnerabilityExporter-1.0\config\SSCToGitHub.yml --ssc.baseUrl=http://fortify201.myhome.com:8080/ssc --ssc.userName=rohitbaryha --ssc.password=Q!W@E#R$T% --ssc.version.name=github-juice-shop:0.1
+          java -DpluginDir=C:\Users\Administrator\Downloads\FortifyVulnerabilityExporter-1.0\plugins -jar C:\Users\Administrator\Downloads\FortifyVulnerabilityExporter-1.0\FortifyVulnerabilityExporter-1.0-beta-20201211-104105.jar --export.config=C:\Users\Administrator\Downloads\FortifyVulnerabilityExporter-1.0\config\SSCToGitHub.yml --ssc.baseUrl=http://fortify201.myhome.com:8080/ssc --ssc.authToken=fd2a9001-b44f-40b7-89d0-50b3441d9199 --ssc.version.id=10010
           copy gh-fortify-sast.sarif "C:\githib-runners\myshuttle\_work\myshuttle\myshuttle\"
           cd ${{ github.workspace }}
           #C:\Users\Administrator\.dotnet\tools\SSCSarif.bat
