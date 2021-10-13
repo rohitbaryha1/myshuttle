@@ -19,13 +19,13 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "greet"
-  greet:
+  DAST:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
     # Runs a single command using the runners shell
-    - name: Run DAST Scan
-      run: CURL --location --request POST "http://34.232.245.89:9090/api/scans/start-scan-cicd" --header "Authorization:FORTIFYTOKEN YTZiZTRiYTgtYmU4Ny00YmEwLThmMDctNTBlZGI1OWU4Y2Mx" --header "Content-Type:application/json" --data-raw "{"cicdToken":'21ce97c8-01af-4397-8eac-98475d3377f4',"name":'PetStore via Swagger minimum'}"
+    - name: DAST
+      run: curl -X POST "http://34.232.245.89:9090/api/v2/scans/start-scan-cicd" -H  "accept: text/plain" -H  "Authorization: FORTIFYTOKEN NTcwMGFiMWUtMGFmMy00NmQwLTgyODktZTUzOTU0MGMzNDM5" -H  "Content-Type: application/json-patch+json" -d "{\"cicdToken\":\"b755514c-ae26-4226-be4a-f53778c44140\",\"name\":\"PetStore via curl\"}"
       
