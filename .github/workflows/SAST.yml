@@ -42,8 +42,8 @@ jobs:
       - name: Perform SAST
         run: scancentral -sscurl "${{ env.URL }}" -ssctoken ${{ env.TOKEN }} start ${{ env.BUILD_OPTS }} -upload -application "${{ env.APPLICATION }}" -version ${{ env.VERSION }} -uptoken ${{ env.TOKEN }} -block -o -f myshuttle.fpr -log-file myshuttle.log 
         env:
-          URL: "http://fortify201.myhome.com:8080/ssc"
-          TOKEN: bda951b8-9425-414d-a84f-35931a7e86cc
+          URL: "http://107.21.34.85:8180/ssc"
+          TOKEN: 5700ab1e-0af3-46d0-8289-e539540c3439
           APPLICATION: "My-Shuttle-GITHUB"
           VERSION: "1.0"
           BUILD_OPTS: "-bt mvn"
