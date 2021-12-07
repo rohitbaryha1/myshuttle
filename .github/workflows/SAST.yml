@@ -40,9 +40,9 @@ jobs:
           client-auth-token: CHANGEME321!
 
       - name: Perform SAST
-        run: scancentral -sscurl "${{ env.URL }}" -ssctoken ${{ env.TOKEN }} start ${{ env.BUILD_OPTS }} -upload -application "${{ env.APPLICATION }}" -version ${{ env.VERSION }} -uptoken ${{ env.TOKEN }} -block -o -f myshuttle.fpr -log-file myshuttle.log 
+        run: scancentral -url "${{ env.URL }}" start ${{ env.BUILD_OPTS }} -upload -application "${{ env.APPLICATION }}" -version ${{ env.VERSION }} -uptoken ${{ env.TOKEN }} -block -o -f myshuttle.fpr -log-file myshuttle.log 
         env:
-          URL: "http://107.21.34.85:8180/ssc"
+          URL: "http://107.21.34.85:8280/scancentral-ctrl/"
           TOKEN: 5700ab1e-0af3-46d0-8289-e539540c3439
           APPLICATION: "My-Shuttle-GITHUB"
           VERSION: "1.0"
